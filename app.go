@@ -1,15 +1,11 @@
 package main
 
 import (
-	"net/http"
-
-	"github.com/gin-gonic/gin"
+	"shorten-link/router"
 )
 
 func main() {
-	r := gin.Default()
-	r.GET("/google", func(ctx *gin.Context) {
-		ctx.Redirect(http.StatusPermanentRedirect, "https://www.google.com")
-	})
+	r := router.NewRouters()
+
 	r.Run()
 }
